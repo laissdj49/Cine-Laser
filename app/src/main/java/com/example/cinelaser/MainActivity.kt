@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
         with(binding) {
             val list = listOf<List<Button>>(
                 listOf(button1, button2, button3, button4),
@@ -46,16 +45,6 @@ class MainActivity : AppCompatActivity() {
           val intent = Intent(this, com.example.cinelaser.SuccessBuyingTicketActivity::class.java)
             intent.putExtra("total",binding.price.text)
             startActivity(intent)
-
-
-
-
-
-
-
         }
-
-
     }
-
 }
