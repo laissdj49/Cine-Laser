@@ -15,6 +15,6 @@ class SuccessBuyingTicketActivity : AppCompatActivity() {
         setContentView(binding.root)
         val price = intent.getStringExtra("total")
            println(price)
-          binding.Tela2.text = price
+          binding.totalPrice.text = price
 }
 }
