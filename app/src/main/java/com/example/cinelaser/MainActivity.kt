@@ -44,7 +44,14 @@ class MainActivity : AppCompatActivity() {
         val purchase : Button = findViewById(R.id.buy)
         purchase.setOnClickListener {
           val intent = Intent(this, com.example.cinelaser.SuccessBuyingTicketActivity::class.java)
+            intent.putExtra("total",binding.price.text)
             startActivity(intent)
+
+
+
+
+
+
 
         }
 
