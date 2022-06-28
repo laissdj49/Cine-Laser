@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CineLaser">
         <activity
+            android:name=".ListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".SuccessBuyingTicketActivity"
             android:exported="false" />
         <activity

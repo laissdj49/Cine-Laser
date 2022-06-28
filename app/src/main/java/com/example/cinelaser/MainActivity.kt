@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         updatePayButton()
+        binding.buttonBack.setOnClickListener{
+           val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
+        }
         with(binding) {
             val list = listOf(
                 listOf(button1, button2, button3, button4),
