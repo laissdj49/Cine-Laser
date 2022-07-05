@@ -6,29 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cinelaser.model.Movie
 
-class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
-
-    private var titles = arrayOf(
-        "The Last Kingdom",
-        "Game Of Thrones",
-        "Vikings",
-        "The 12 Princess Ballerinas",
-        "The Princess and the Commoner",
-        "the Diamond Castle",
-        " The Swan Lake",
-        "Barbie Fairy Secret"
-    )
-    private var images = intArrayOf(
-        R.drawable.imagetlk,
-        R.drawable.imagegot,
-        R.drawable.imagevikings,
-        R.drawable.imageb12,
-        R.drawable.imagebpp,
-        R.drawable.imagebcd,
-        R.drawable.imageblgc,
-        R.drawable.imagebsf
-    )
+class RecyclerAdapter(
+    private val movies: List<Movie>,
+    private val onClick: () -> Unit
+) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.movies_item, parent, false)
@@ -36,13 +19,14 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-        holder.itemTitle.text = titles[position]
-        holder.itemImage.setImageResource(images[position])
+        holder.itemTitle.text = movies[position].title
+        holder.itemImage.setImageResource(movies[position].image)
+        holder.itemView.setOnClickListener {
+            onClick.invoke()
+        }
     }
 
-    override fun getItemCount(): Int {
-        return titles.size
-    }
+    override fun getItemCount(): Int  = movies.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemImage: ImageView = itemView.findViewById(R.id.item_image)
