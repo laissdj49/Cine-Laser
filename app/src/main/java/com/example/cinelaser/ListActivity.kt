@@ -1,5 +1,6 @@
 package com.example.cinelaser
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,13 +12,20 @@ class ListActivity : AppCompatActivity() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+    private val viewModel by lazy { ListViewModel() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
-        adapter = RecyclerAdapter()
+        val movies = viewModel.listMovies()
+        adapter = RecyclerAdapter(movies, ::onClickGoToNextScreen)
         binding.recyclerView.adapter = adapter
+    }
+
+    private fun onClickGoToNextScreen() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
