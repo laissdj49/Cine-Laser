@@ -4,16 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
     tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="319dp"
+        android:layout_height="40dp"
         android:text="@string/welcome_to_cinelaser"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="#E91E63"
         android:textIsSelectable="false"
         android:textSize="24sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -25,20 +30,29 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="72dp"
         android:text="@string/email"
-        android:textColor="#F44336"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.09" />
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="346dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="36dp"
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="#9C27B0"
+        android:backgroundTint="#9C27B0"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,14 +61,28 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="#673AB7"
+            android:backgroundTint="#9C27B0"
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/textTextEmail"
-                android:layout_width="341dp"
-                android:layout_height="44dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#9C27B0"
+                android:breakStrategy="high_quality"
+                android:duplicateParentState="false"
                 android:ems="10"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:lineSpacingExtra="8sp"
+                android:scrollHorizontally="false"
+                android:selectAllOnFocus="false"
+                android:textAlignment="viewStart"
+                android:textColor="#050405"
+                android:textSize="16sp"
+                android:visibility="visible" />
+
+
         </LinearLayout>
     </ScrollView>
 
@@ -62,37 +90,39 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="48dp"
         android:text="@string/password"
-        android:textColor="#F44336"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
+
         android:id="@+id/scrollView3"
-        android:layout_width="341dp"
-        android:layout_height="51dp"
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="274dp"
+        android:layout_height="47dp"
+        android:background="#673AB7"
+        android:backgroundTint="#9C27B0"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@android:color/holo_red_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.161">
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberPassword"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/editTextNumberPassword"
-                android:layout_width="339dp"
-                android:layout_height="45dp"
-                android:ems="10"
-                android:inputType="numberPassword" />
 
         </LinearLayout>
     </ScrollView>
@@ -103,8 +133,9 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#E91E63"
         android:text="@string/login"
-        android:textColor="#E5F8F6"
-        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,13 +147,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#E91E63"
-        android:text="@string/continue_as_a_guest"
-        android:textSize="20sp"
+        android:text="@string/Continue_as_a_guest"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintVertical_bias="0.182" />
+
+    <EditText
+        android:id="@+id/editTextNumberPassword"
+        android:layout_width="266dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="236dp"
+        android:backgroundTint="#9C27B0"
+        android:ems="10"
+        android:inputType="numberPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/scrollView3"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
