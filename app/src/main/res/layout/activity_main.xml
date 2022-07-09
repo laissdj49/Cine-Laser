@@ -10,9 +10,9 @@
 
     <TextView
         android:id="@+id/CineLaser"
-        android:layout_width="175dp"
-        android:layout_height="31dp"
-        android:text="Cine Laser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cine_laser"
         android:textAlignment="center"
         android:textColor="#F44336"
         android:textSize="20sp"

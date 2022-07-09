@@ -10,7 +10,7 @@ import com.example.cinelaser.model.Movie
 
 class RecyclerAdapter(
     private val movies: List<Movie>,
-    private val onClick: () -> Unit
+    private val onClick: (Movie) -> Unit
 ) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
@@ -19,10 +19,12 @@ class RecyclerAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-        holder.itemTitle.text = movies[position].title
-        holder.itemImage.setImageResource(movies[position].image)
+        val movie = movies[position]
+        holder.itemTitle.text = movie.title
+        holder.itemImage.setImageResource(movie.image)
+
         holder.itemView.setOnClickListener {
-            onClick.invoke()
+            onClick.invoke(movie)
         }
     }
 
