@@ -17,4 +17,6 @@ class ListViewModel : ViewModel() {
             Movie("Barbie Fairy Secret", R.drawable.imagebsf),
         )
     }
+
+
 }

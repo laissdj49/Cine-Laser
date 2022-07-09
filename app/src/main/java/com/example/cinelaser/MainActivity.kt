@@ -2,7 +2,6 @@ package com.example.cinelaser
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cinelaser.databinding.ActivityMainBinding
 
@@ -15,6 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         updatePayButton()
+        val text = intent.getStringExtra("text")
+
+        binding.CineLaser.text = "selecione o assento para o filme $text"
+
+
         binding.buttonBack.setOnClickListener{
            val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
