@@ -46,15 +46,11 @@ class MainActivity : AppCompatActivity() {
                             true
 
                         }
-
                         updatePayButton()
-
                     }
                 }
             }
         }
-
-
 
        binding.buy.setOnClickListener {
             val intent = Intent(this, SuccessBuyingTicketActivity::class.java)
@@ -68,5 +64,4 @@ class MainActivity : AppCompatActivity() {
         binding.price.text = vm.getTotalFormatted()
 
     }
-
 }
