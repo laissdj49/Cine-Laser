@@ -44,15 +44,15 @@ class MainActivity : AppCompatActivity() {
                             list[i][j].setBackgroundColor(getColor(R.color.Red))
                             vm.addSeatToTotalToPay(i+1, 6)
                             true
-                        }
 
+                        }
                         updatePayButton()
                     }
                 }
             }
         }
 
-        binding.buy.setOnClickListener {
+       binding.buy.setOnClickListener {
             val intent = Intent(this, SuccessBuyingTicketActivity::class.java)
             intent.putExtra("total", vm.getTotalFormatted())
             startActivity(intent)
@@ -61,5 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updatePayButton(){
         binding.buy.isEnabled = vm.canProceedToPay()
+        binding.price.text = vm.getTotalFormatted()
+
     }
 }

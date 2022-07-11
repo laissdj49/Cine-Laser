@@ -9,4 +9,6 @@
     <string name="required">Email_Invaled</string>
     <string name="Continue_as_a_guest">Continue as a guest</string>
     <string name="selecione_o_seu_assento_para_o_filme">Selecione o seu assento para o filme</string>
+    <string name="concluir_compra">Concluir compra</string>
+    <string name="lista_de_filmes">Lista de filmes</string>
 </resources>
