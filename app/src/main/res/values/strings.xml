@@ -11,4 +11,8 @@
     <string name="selecione_o_seu_assento_para_o_filme">Selecione o seu assento para o filme</string>
     <string name="concluir_compra">Concluir compra</string>
     <string name="lista_de_filmes">Lista de filmes</string>
+    <string name="bem_vindo_ao_cinelaser">Bem vindo ao cinelaser</string>
+    <string name="senha">Senha</string>
+    <string name="continuar_como_convidado">Continuar como convidado</string>
+    <string name="entrar">Entrar</string>
 </resources>

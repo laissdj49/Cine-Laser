@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.CineLaser.text = "selecione o assento para o filme $text"
 
-
         binding.buttonBack.setOnClickListener{
            val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
@@ -44,7 +43,6 @@ class MainActivity : AppCompatActivity() {
                             list[i][j].setBackgroundColor(getColor(R.color.Red))
                             vm.addSeatToTotalToPay(i+1, 6)
                             true
-
                         }
                         updatePayButton()
                     }
@@ -58,10 +56,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
     private fun updatePayButton(){
         binding.buy.isEnabled = vm.canProceedToPay()
         binding.price.text = vm.getTotalFormatted()
-
     }
 }

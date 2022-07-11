@@ -12,7 +12,7 @@
         android:id="@+id/textView2"
         android:layout_width="319dp"
         android:layout_height="40dp"
-        android:text="@string/welcome_to_cinelaser"
+        android:text="@string/bem_vindo_ao_cinelaser"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#E91E63"
@@ -80,7 +80,8 @@
                 android:textAlignment="viewStart"
                 android:textColor="#050405"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:autofillHints="" />
 
 
         </LinearLayout>
@@ -91,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="@string/password"
+        android:text="@string/senha"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -119,12 +120,6 @@
         app:layout_constraintTop_toTopOf="@+id/editTextNumberPassword"
         app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
     </ScrollView>
 
     <Button
@@ -132,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#E91E63"
-        android:text="@string/login"
+        android:text="@string/entrar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -147,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#E91E63"
-        android:text="@string/Continue_as_a_guest"
+        android:text="@string/continuar_como_convidado"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"
