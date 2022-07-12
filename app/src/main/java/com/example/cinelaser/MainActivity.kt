@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cinelaser.databinding.ActivityMainBinding
+import com.example.cinelaser.model.Movie
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,11 +51,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-       binding.buy.setOnClickListener {
+        binding.buy.setOnClickListener {
             val intent = Intent(this, SuccessBuyingTicketActivity::class.java)
+            intent.putExtra("text", text)
             intent.putExtra("total", vm.getTotalFormatted())
+            intent.putExtra("tickets", vm.getNumberTickets())
             startActivity(intent)
         }
+
     }
     private fun updatePayButton(){
         binding.buy.isEnabled = vm.canProceedToPay()
