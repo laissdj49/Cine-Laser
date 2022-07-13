@@ -2,26 +2,32 @@ package com.example.cinelaser
 
 import androidx.lifecycle.ViewModel
 
-class MainActivityViewModel: ViewModel(){
+class MainActivityViewModel : ViewModel() {
 
     private var totalToPay = 0
+    private var cont = 0
 
     fun addSeatToTotalToPay(rows: Int, seats: Int) {
         val valueSeat = calculateProfit(rows, seats)
         totalToPay += valueSeat
+        cont++
     }
 
-    fun removeSeatOfTotalToPay(rows: Int, seats: Int){
+    fun removeSeatOfTotalToPay(rows: Int, seats: Int) {
         val valueSeat = calculateProfit(rows, seats)
         totalToPay -= valueSeat
+        cont--
     }
 
-    fun canProceedToPay() : Boolean {
+    fun canProceedToPay(): Boolean {
         return totalToPay > 0
     }
 
-    fun getTotalFormatted() : String {
+    fun getTotalFormatted(): String {
         return "Total a pagar: R$ $totalToPay"
+    }
+    fun getNumberTickets(): Int{
+        return cont
     }
 
     private fun calculateProfit(rows: Int, seats: Int): Int {
