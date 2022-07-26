@@ -19,6 +19,12 @@ class SuccessBuyingTicketActivity : AppCompatActivity() {
         println(txt)
         binding.textView4.text = "você teve sucesso na compra de $tickets ingresso(s) para o filme $txt"
 
+        binding.myTicket.setOnClickListener {
+            val intent = Intent(this, ScreenTicketActivity::class.java)
+            intent.putExtra("title", txt)
+            intent.putExtra("ticket", tickets)
+            startActivity(intent)
+        }
         binding.screenMovie.setOnClickListener {
             val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
